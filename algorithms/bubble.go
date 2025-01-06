@@ -1,4 +1,4 @@
-package gosort
+package sort
 
 func BubbleSortOptimized(array []int) []int {
 	unsorted_len := len(array)
