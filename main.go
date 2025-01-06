@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	gosort "gosort/algorithms"
+	sort "gosort/algorithms"
 	"math/rand"
 	"time"
 )
@@ -10,7 +10,7 @@ import (
 func main() {
 	array := generateUniqueRandomList(100)
 	start := time.Now()
-	gosort.BubbleSortOptimized(array)
+	sort.BubbleSortOptimized(array)
 	fmt.Println("Time taken for BubbleSortOptimized: ", time.Since(start))
 
 }
@@ -25,6 +25,6 @@ func generateUniqueRandomList(n int) []int {
 		j := rand.Intn(i + 1)
 		nums[i], nums[j] = nums[j], nums[i]
 	}
-	
+
 	return nums
 }
