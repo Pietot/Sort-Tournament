@@ -8,10 +8,13 @@ import (
 )
 
 func main() {
-	array := generateUniqueRandomList(100)
+	array := generateUniqueRandomList(10000)
 	start := time.Now()
-	sort.BubbleSortOptimized(array)
-	fmt.Println("Time taken for BubbleSortOptimized: ", time.Since(start))
+	sort.BinaryInsertionSort(append([]int(nil), array...))
+	fmt.Println("Time taken for BinaryInsertionSort:", time.Since(start))
+	start = time.Now()
+	sort.BubbleSortOptimized(append([]int(nil), array...))
+	fmt.Println("Time taken for BubbleSortOptimized:", time.Since(start))
 
 }
 
