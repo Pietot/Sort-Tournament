@@ -2,20 +2,42 @@ package main
 
 import (
 	"fmt"
-	sort "gosort/algorithms"
+	mySort "gosort/algorithms"
 	"math/rand"
 	"time"
+	"sort"
 )
 
 func main() {
-	array := generateUniqueRandomList(10000)
-	start := time.Now()
-	sort.BinaryInsertionSort(append([]int(nil), array...))
-	fmt.Println("Time taken for BinaryInsertionSort:", time.Since(start))
-	start = time.Now()
-	sort.BubbleSortOptimized(append([]int(nil), array...))
-	fmt.Println("Time taken for BubbleSortOptimized:", time.Since(start))
+	array := generateUniqueRandomList(30000)
 
+	start := time.Now()
+	sort.Ints(append([]int(nil), array...))
+	fmt.Println("Time taken for sort.Ints:", time.Since(start))
+
+	start = time.Now()
+	mySort.BinaryInsertionSort(append([]int(nil), array...))
+	fmt.Println("Time taken for BinaryInsertionSort:", time.Since(start))
+	
+	start = time.Now()
+	mySort.BubbleSortOptimized(append([]int(nil), array...))
+	fmt.Println("Time taken for BubbleSortOptimized:", time.Since(start))
+	
+	start = time.Now()
+	mySort.DoubleSelectionSort(append([]int(nil), array...))
+	fmt.Println("Time taken for DoubleSelectionSort:", time.Since(start))
+
+	start = time.Now()
+	mySort.ShakerSort(append([]int(nil), array...))
+	fmt.Println("Time taken for ShakerSort:", time.Since(start))
+
+	start = time.Now()
+	mySort.QuickSort(append([]int(nil), array...))
+	fmt.Println("Time taken for QuickSort:", time.Since(start))
+
+	start = time.Now()
+	mySort.MergeSort(append([]int(nil), array...))
+	fmt.Println("Time taken for MergeSort:", time.Since(start))
 }
 
 func generateUniqueRandomList(n int) []int {
