@@ -43,6 +43,10 @@ func main() {
 	mySort.HeapSort(append([]int(nil), array...))
 	fmt.Println("Time taken for HeapSort:", time.Since(start))
 	
+	start = time.Now()
+	mySort.CombSort(append([]int(nil), array...))
+	fmt.Println("Time taken for CombSort:", time.Since(start))
+	
 }
 
 func generateUniqueRandomList(n int) []int {
