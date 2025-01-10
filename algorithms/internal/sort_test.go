@@ -17,6 +17,7 @@ func TestSorts(test *testing.T) {
 		{"QuickSort", mySort.QuickSort},
 		{"MergeSort", mySort.MergeSort},
 		{"HeapSort", mySort.HeapSort},
+		{"CombSort", mySort.CombSort},
 	}
 
 	unsortedArray := [8]int{5, 3, 8, 6, 2, 7, 1, 4}
