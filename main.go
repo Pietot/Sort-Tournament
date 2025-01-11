@@ -16,12 +16,16 @@ func main() {
 	fmt.Println("Time taken for sort.Ints:", time.Since(start))
 
 	start = time.Now()
+	mySort.InsertionSort(append([]int(nil), array...))
+	fmt.Println("Time taken for InsertionSort:", time.Since(start))
+
+	start = time.Now()
 	mySort.BinaryInsertionSort(append([]int(nil), array...))
 	fmt.Println("Time taken for BinaryInsertionSort:", time.Since(start))
 
 	start = time.Now()
 	mySort.BubbleSortOptimized(append([]int(nil), array...))
-	fmt.Println("Time taken for BubbleSortOptimized:", time.Since(start))
+	fmt.Println("Time taken for BubbleSort optimized:", time.Since(start))
 
 	start = time.Now()
 	mySort.DoubleSelectionSort(append([]int(nil), array...))
