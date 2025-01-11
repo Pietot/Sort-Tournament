@@ -20,6 +20,15 @@ func TestSorts(test *testing.T) {
 		{"HeapSort", mySort.HeapSort},
 		{"CombSort", mySort.CombSort},
 		{"ShellSort", mySort.ShellSort},
+		{"RadixLSDSort", mySort.RadixLSDSort},
+		{"CountingSort", mySort.CountingSort},
+		{"OddEvenSort", mySort.OddEvenSort},
+		{"CircleSort", mySort.CircleSort},
+		{"TournamentSort", mySort.TournamentSort},
+		{"TreeSort", mySort.TreeSort},
+		{"GnomeSort", mySort.GnomeSort},
+		{"IntroSort", mySort.IntroSort},
+		{"TimSort", mySort.TimSort},
 	}
 
 	unsortedArray := [8]int{5, 3, 8, 6, 2, 7, 1, 4}
