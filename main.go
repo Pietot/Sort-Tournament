@@ -58,6 +58,42 @@ func main() {
 	start = time.Now()
 	mySort.ShellSort(append([]int(nil), array...))
 	fmt.Printf("Time taken for ShellSort: %.3f ms\n", time.Since(start).Seconds()*1000)
+
+	start = time.Now()
+	mySort.RadixLSDSort(append([]int(nil), array...))
+	fmt.Printf("Time taken for Radix LSD sort base 64: %.3f ms\n", time.Since(start).Seconds()*1000)
+
+	start = time.Now()
+	mySort.CountingSort(append([]int(nil), array...))
+	fmt.Printf("Time taken for CountingSort: %.3f ms\n", time.Since(start).Seconds()*1000)
+
+	start = time.Now()
+	mySort.OddEvenSort(append([]int(nil), array...))
+	fmt.Printf("Time taken for OddEvenSort: %.3f ms\n", time.Since(start).Seconds()*1000)
+
+	start = time.Now()
+	mySort.CircleSort(append([]int(nil), array...))
+	fmt.Printf("Time taken for CircleSort: %.3f ms\n", time.Since(start).Seconds()*1000)
+
+	start = time.Now()
+	mySort.TournamentSort(append([]int(nil), array...))
+	fmt.Printf("Time taken for TournamentSort: %.3f ms\n", time.Since(start).Seconds()*1000)
+
+	start = time.Now()
+	mySort.TreeSort(append([]int(nil), array...))
+	fmt.Printf("Time taken for TreeSort: %.3f ms\n", time.Since(start).Seconds()*1000)
+
+	start = time.Now()
+	mySort.GnomeSort(append([]int(nil), array...))
+	fmt.Printf("Time taken for GnomeSort: %.3f ms\n", time.Since(start).Seconds()*1000)
+
+	start = time.Now()
+	mySort.IntroSort(append([]int(nil), array...))
+	fmt.Printf("Time taken for IntroSort: %.3f ms\n", time.Since(start).Seconds()*1000)
+
+	start = time.Now()
+	mySort.TimSort(append([]int(nil), array...))
+	fmt.Printf("Time taken for TimSort: %.3f ms\n", time.Since(start).Seconds()*1000)
 }
 
 func generateUniqueRandomList(n int) []int {
