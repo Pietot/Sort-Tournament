@@ -10,6 +10,7 @@ func TestSorts(test *testing.T) {
 		name     string
 		function func([]int) []int
 	}{
+		{"InsertionSort", mySort.InsertionSort},
 		{"BinaryInsertionSort", mySort.BinaryInsertionSort},
 		{"BubbleSortOptimized", mySort.BubbleSortOptimized},
 		{"DoubleSelectionSort", mySort.DoubleSelectionSort},
