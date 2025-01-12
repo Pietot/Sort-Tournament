@@ -29,6 +29,8 @@ func TestSorts(test *testing.T) {
 		{"GnomeSort", mySort.GnomeSort},
 		{"IntroSort", mySort.IntroSort},
 		{"TimSort", mySort.TimSort},
+		{"SmoothSort", mySort.SmoothSort},
+		{"BlockSort", mySort.BlockSort},
 	}
 
 	unsortedArray := [8]int{5, 3, 8, 6, 2, 7, 1, 4}
