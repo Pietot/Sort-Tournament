@@ -4,7 +4,7 @@ func TimSort(array []int) []int {
 	n := len(array)
 	minrun := 32
 	for i := 0; i < n; i += minrun {
-		insertionSort(array, i, min(i+minrun, n))
+		timInsertionSort(array, i, min(i+minrun, n))
 	}
 	size := minrun
 	for size < n {
@@ -20,7 +20,7 @@ func TimSort(array []int) []int {
 	return array
 }
 
-func insertionSort(array []int, left, right int) {
+func timInsertionSort(array []int, left, right int) {
 	for i := left + 1; i < right; i++ {
 		for j := i; j > left && array[j] < array[j-1]; j-- {
 			array[j], array[j-1] = array[j-1], array[j]
