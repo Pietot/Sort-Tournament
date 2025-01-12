@@ -94,6 +94,14 @@ func main() {
 	start = time.Now()
 	mySort.TimSort(append([]int(nil), array...))
 	fmt.Printf("Time taken for TimSort: %.3f ms\n", time.Since(start).Seconds()*1000)
+
+	start = time.Now()
+	mySort.SmoothSort(append([]int(nil), array...))
+	fmt.Printf("Time taken for SmoothSort: %.3f ms\n", time.Since(start).Seconds()*1000)
+
+	start = time.Now()
+	mySort.BlockSort(append([]int(nil), array...))
+	fmt.Printf("Time taken for BlockSort: %.3f ms\n", time.Since(start).Seconds()*1000)
 }
 
 func generateUniqueRandomList(n int) []int {
