@@ -13,6 +13,7 @@ func TestSorts(test *testing.T) {
 		{"InsertionSort", mySort.InsertionSort},
 		{"BinaryInsertionSort", mySort.BinaryInsertionSort},
 		{"BubbleSortOptimized", mySort.BubbleSortOptimized},
+		{"SelectionSortOptimized", mySort.SelectionSortOptimized},
 		{"DoubleSelectionSort", mySort.DoubleSelectionSort},
 		{"ShakerSort", mySort.ShakerSort},
 		{"QuickSort", mySort.QuickSort},
