@@ -1,7 +1,8 @@
 package sort
 
-func SelectionSort(array []int) []int {
+func SelectionSortOptimized(array []int) []int {
 	arrLength := len(array)
+	sortedArray := make([]int, arrLength)
 
 	for i := 0; i < arrLength; i++ {
 		minIndex := i
@@ -12,8 +13,8 @@ func SelectionSort(array []int) []int {
 			}
 		}
 
-		array[i], array[minIndex] = array[minIndex], array[i]
+		sortedArray[i] = array[minIndex]
 	}
 
-	return array
+	return sortedArray
 }
