@@ -27,7 +27,7 @@ func main() {
 		{"InsertionSort", mySort.InsertionSort, 0, 0, 0, 0, 0},
 		{"BinaryInsertionSort", mySort.BinaryInsertionSort, 0, 0, 0, 0, 0},
 		{"BubbleSort optimized", mySort.BubbleSortOptimized, 0, 0, 0, 0, 0},
-		{"SelectionSort", mySort.SelectionSort, 0, 0, 0, 0, 0},
+		{"SelectionSort", mySort.SelectionSortOptimized, 0, 0, 0, 0, 0},
 		{"DoubleSelectionSort", mySort.DoubleSelectionSort, 0, 0, 0, 0, 0},
 		{"ShakerSort", mySort.ShakerSort, 0, 0, 0, 0, 0},
 		{"QuickSort", mySort.QuickSort, 0, 0, 0, 0, 0},
