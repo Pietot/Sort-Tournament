@@ -84,7 +84,7 @@ Here's a quick overview of the algorithms used in the project:
 Here are the algorithms ranked from the fastest to the slowest by sorting the same list of 1M integers in random order:
 
 | Rank |                       Algorithm                       | Time (ms) |
-| :--: | :---------------------------------------------------: | :-------: |
+| :--: | :--------------------------------------------------- | :-------: |
 |  1   |                   **Counting Sort**                   |   ~ 18    |
 |  2   |                    **Block Sort**                     |   ~ 63    |
 |  3   |             **Radix LSD Sort (Base 64)**              |   ~ 71    |
