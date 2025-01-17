@@ -49,7 +49,7 @@ func main() {
 		{"BlockSort", mySort.BlockSort, 0, 0, 0, 0, 0},
 	}
 
-	n := 1_000
+	n := 1_000_000
 
 	randomArray := generateRandomList(n)
 	roughlySortedArray := generateRoughlySortedList(n)
