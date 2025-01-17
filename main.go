@@ -4,6 +4,7 @@ import (
 	"fmt"
 	mySort "gosort/algorithms"
 	"math/rand"
+	"os"
 	"sort"
 	"time"
 )
@@ -48,7 +49,7 @@ func main() {
 		{"BlockSort", mySort.BlockSort, 0, 0, 0, 0, 0},
 	}
 
-	n := 1_000_000
+	n := 1_000
 
 	randomArray := generateRandomList(n)
 	roughlySortedArray := generateRoughlySortedList(n)
@@ -71,6 +72,11 @@ func main() {
 		fmt.Printf("Reversed list: %.3f ms\n", benchmark.timeReversedSortedList)
 		fmt.Printf("Average time: %.3f ms\n", benchmark.averageTime)
 		fmt.Println()
+	}
+
+	err := exportToCsv(benchmarks)
+	if err != nil {
+		fmt.Printf("\033[31m%s\033[0m\n", err)
 	}
 }
 
@@ -115,7 +121,7 @@ func generateNearlySortedList(n int) []int {
 		array[i] = i + 1
 	}
 
-	// exchange 10% of the elements
+	// Exchange 10% of the elements
 	r := rand.New(rand.NewSource(time.Now().UnixNano()))
 	for i := 0; i < n/10; i++ {
 		j := r.Intn(n)
@@ -140,4 +146,27 @@ func measureTime(sortFunction func([]int) []int, array []int) float64 {
 	sortFunction(array)
 	elapsed := time.Since(start).Seconds() * 1000
 	return elapsed
+}
+
+func exportToCsv(benchmarks []*Benchmark) error {
+	file, err := os.Create("benchmark.csv")
+	if err != nil {
+		return fmt.Errorf("failed creating file: %s", err)
+	}
+	defer file.Close()
+
+	_, err = file.WriteString("Algorithm,Random list,Roughly sorted list,Nearly sorted list,Reversed list,Average time\n")
+	if err != nil {
+		return fmt.Errorf("failed writing to file: %s", err)
+	}
+
+	for _, benchmark := range benchmarks {
+		_, err = file.WriteString(fmt.Sprintf("%s,%.3f,%.3f,%.3f,%.3f,%.3f\n", benchmark.name, benchmark.timeRandomList, benchmark.timeRoughlySortedList, benchmark.timeNearlySortedList, benchmark.timeReversedSortedList, benchmark.averageTime))
+		if err != nil {
+			return fmt.Errorf("failed writing to file: %s", err)
+		}
+	}
+	
+	fmt.Printf("\033[36m%s\033[0m\n", "Benchmark results successfully saved to benchmark.csv")
+	return nil
 }
