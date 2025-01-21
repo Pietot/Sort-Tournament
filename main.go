@@ -47,6 +47,7 @@ func main() {
 		{"TimSort", mySort.TimSort, 0, 0, 0, 0, 0},
 		{"SmoothSort", mySort.SmoothSort, 0, 0, 0, 0, 0},
 		{"BlockSort", mySort.BlockSort, 0, 0, 0, 0, 0},
+		{"BucketSort", mySort.BucketSort, 0, 0, 0, 0, 0},
 	}
 
 	n := 1_000_000
@@ -166,7 +167,7 @@ func exportToCsv(benchmarks []*Benchmark) error {
 			return fmt.Errorf("failed writing to file: %s", err)
 		}
 	}
-	
+
 	fmt.Printf("\033[36m%s\033[0m\n", "Benchmark results successfully saved to benchmark.csv")
 	return nil
 }
