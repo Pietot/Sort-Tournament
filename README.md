@@ -58,6 +58,7 @@ Here's a quick overview of the algorithms used in the project:
 - Binary Insertion Sort
 - Block Sort
 - Bubble Sort (Optimized)
+- Bucket Sort
 - Circle Sort
 - Comb Sort
 - Counting Sort
@@ -83,31 +84,32 @@ Here's a quick overview of the algorithms used in the project:
 
 Here are the algorithms ranked from the fastest to the slowest by sorting the same list of 1M integers in random order:
 
-| Rank |                       Algorithm                       | Time (ms) |
-| :--: | :--------------------------------------------------- | :-------: |
-|  1   |                   **Counting Sort**                   |   ~ 18    |
-|  2   |                    **Block Sort**                     |   ~ 63    |
-|  3   |             **Radix LSD Sort (Base 64)**              |   ~ 71    |
-|  4   |             **Quick Sort (Middle Pivot)**             |   ~ 89    |
-|  5   |                    **Intro Sort**                     |   ~ 93    |
-|  6   | **Pattern-Defeating Quick Sort (default sort in Go)** |   ~ 98    |
-|  7   |                    **Smooth Sort**                    |   ~ 138   |
-|  8   |                     **Comb Sort**                     |   ~ 142   |
-|  9   |                     **Tim Sort**                      |   ~ 144   |
-|  10  |                    **Shell Sort**                     |   ~ 173   |
-|  11  |                    **Merge Sort**                     |   ~ 184   |
-|  12  |                  **Tournament Sort**                  |   ~ 311   |
-|  13  |                     **Heap Sort**                     |   ~ 375   |
-|  14  |                     **Tree Sort**                     |   ~ 690   |
-|  15  |               **Binary Insertion Sort**               | ~ 102640  |
-|  16  |                    **Circle Sort**                    | ~ 237136  |
-|  17  |                  **Insertion Sort**                   | ~ 241254  |
-|  18  |               **Double Selection Sort**               | ~ 421952  |
-|  19  |            **Selection Sort (Optimized)**             | ~ 592139  |
-|  20  |                    **Gnome Sort**                     | ~ 801793  |
-|  21  |                   **Odd-Even Sort**                   | ~ 980085  |
-|  22  |                    **Shaker Sort**                    | ~ 1202780 |
-|  23  |              **Bubble Sort (Optimized)**              | ~ 1748075 |
+| Rank | Algorithm                                             | Time (ms) |
+| :--: | :---------------------------------------------------- | :-------: |
+|  1   | **Counting Sort**                                     |   ~ 24    |
+|  2   | **Bucket Sort**                                       |   ~ 43    |
+|  3   | **Block Sort**                                        |   ~ 44    |
+|  4   | **Radix LSD Sort (Base 64)**                          |   ~ 69    |
+|  5   | **Quick Sort (Middle Pivot)**                         |   ~ 89    |
+|  6   | **Intro Sort**                                        |   ~ 93    |
+|  7   | **Pattern-Defeating Quick Sort (default sort in Go)** |   ~ 98    |
+|  8   | **Smooth Sort**                                       |   ~ 138   |
+|  9   | **Comb Sort**                                         |   ~ 142   |
+|  10  | **Tim Sort**                                          |   ~ 144   |
+|  11  | **Shell Sort**                                        |   ~ 173   |
+|  12  | **Merge Sort**                                        |   ~ 184   |
+|  13  | **Tournament Sort**                                   |   ~ 311   |
+|  14  | **Heap Sort**                                         |   ~ 375   |
+|  15  | **Tree Sort**                                         |   ~ 690   |
+|  16  | **Binary Insertion Sort**                             | ~ 102640  |
+|  17  | **Circle Sort**                                       | ~ 237136  |
+|  18  | **Insertion Sort**                                    | ~ 241254  |
+|  19  | **Double Selection Sort**                             | ~ 421952  |
+|  20  | **Selection Sort (Optimized)**                        | ~ 592139  |
+|  21  | **Gnome Sort**                                        | ~ 801793  |
+|  22  | **Odd-Even Sort**                                     | ~ 980085  |
+|  23  | **Shaker Sort**                                       | ~ 1202780 |
+|  24  | **Bubble Sort (Optimized)**                           | ~ 1748075 |
 
 ## 6 - Improve the project
 
