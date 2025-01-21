@@ -63,15 +63,27 @@ func main() {
 		benchmark.timeNearlySortedList = measureTime(benchmark.function, append([]int(nil), nearlySortedArray...))
 		benchmark.timeReversedSortedList = measureTime(benchmark.function, append([]int(nil), reversedArray...))
 		benchmark.averageTime = (benchmark.timeRandomList + benchmark.timeRoughlySortedList + benchmark.timeNearlySortedList + benchmark.timeReversedSortedList) / 4
-	}
+		// Recompute the times 60 times to get a more accurate average time
+		if benchmark.averageTime < 1000 {
+			for i := 1; i < 60; i++ {
+				benchmark.timeRandomList += measureTime(benchmark.function, append([]int(nil), randomArray...))
+				benchmark.timeRoughlySortedList += measureTime(benchmark.function, append([]int(nil), roughlySortedArray...))
+				benchmark.timeNearlySortedList += measureTime(benchmark.function, append([]int(nil), nearlySortedArray...))
+				benchmark.timeReversedSortedList += measureTime(benchmark.function, append([]int(nil), reversedArray...))
+			}
+			benchmark.timeRandomList /= 60
+			benchmark.timeRoughlySortedList /= 60
+			benchmark.timeNearlySortedList /= 60
+			benchmark.timeReversedSortedList /= 60
+			benchmark.averageTime = (benchmark.timeRandomList + benchmark.timeRoughlySortedList + benchmark.timeNearlySortedList + benchmark.timeReversedSortedList) / 4
+		}
 
-	for _, benchmark := range benchmarks {
 		fmt.Printf("\033[32m%s\033[0m\n", benchmark.name)
-		fmt.Printf("Random list: %.3f ms\n", benchmark.timeRandomList)
-		fmt.Printf("Roughly sorted list: %.3f ms\n", benchmark.timeRoughlySortedList)
-		fmt.Printf("Nearly sorted list: %.3f ms\n", benchmark.timeNearlySortedList)
-		fmt.Printf("Reversed list: %.3f ms\n", benchmark.timeReversedSortedList)
-		fmt.Printf("Average time: %.3f ms\n", benchmark.averageTime)
+		fmt.Printf("Random list: %.0f ms\n", benchmark.timeRandomList)
+		fmt.Printf("Roughly sorted list: %.0f ms\n", benchmark.timeRoughlySortedList)
+		fmt.Printf("Nearly sorted list: %.0f ms\n", benchmark.timeNearlySortedList)
+		fmt.Printf("Reversed list: %.0f ms\n", benchmark.timeReversedSortedList)
+		fmt.Printf("Average time: %.0f ms\n", benchmark.averageTime)
 		fmt.Println()
 	}
 
