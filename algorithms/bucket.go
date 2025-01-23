@@ -14,7 +14,10 @@ func BucketSort(array []int) []int {
 
 	// Optimal bucket count I tested
 	bucketCount := n / 30
-	buckets := make([][]int, bucketCount)
+	if bucketCount == 0 {
+        bucketCount = 1
+    }
+    buckets := make([][]int, bucketCount)
 
 	for _, val := range array {
 		index := int(int(bucketCount-1) * (val - minVal) / (maxVal - minVal))
