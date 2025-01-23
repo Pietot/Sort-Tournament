@@ -33,6 +33,7 @@ func TestSorts(test *testing.T) {
 		{"SmoothSort", mySort.SmoothSort},
 		{"BlockSort", mySort.BlockSort},
 		{"BucketSort", mySort.BucketSort},
+		{"CountingSortUnstable", mySort.CountingSortUnstable},
 	}
 
 	unsortedArray := [8]int{5, 3, 8, 6, 2, 7, 1, 4}
