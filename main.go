@@ -113,14 +113,14 @@ func generateRoughlySortedList(n int) []int {
 		array[i] = i + 1
 	}
 
-	r := rand.New(rand.NewSource(time.Now().UnixNano()))
+	random := rand.New(rand.NewSource(time.Now().UnixNano()))
 
 	for i := 0; i < n; i += 5 {
 		end := i + 5
 		if end > n {
 			end = n
 		}
-		r.Shuffle(end-i, func(a, b int) {
+		random.Shuffle(end-i, func(a, b int) {
 			array[i+a], array[i+b] = array[i+b], array[i+a]
 		})
 	}
