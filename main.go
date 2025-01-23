@@ -58,6 +58,8 @@ func main() {
 	nearlySortedArray := generateNearlySortedList(n)
 	reversedArray := generateReversedSortedList(n)
 
+	computeTimeStart := time.Now()
+
 	for _, benchmark := range benchmarks {
 		benchmark.timeRandomList = measureTime(benchmark.function, append([]int(nil), randomArray...))
 		benchmark.timeRoughlySortedList = measureTime(benchmark.function, append([]int(nil), roughlySortedArray...))
@@ -87,6 +89,8 @@ func main() {
 		fmt.Printf("Average time: %.0f ms\n", benchmark.averageTime)
 		fmt.Println()
 	}
+
+	fmt.Printf("\033[32m%s %.0f minutes\033[0m\n", "Total time:", time.Since(computeTimeStart).Minutes())
 
 	err := exportToCsv(benchmarks)
 	if err != nil {
