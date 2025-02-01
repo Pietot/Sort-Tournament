@@ -10,13 +10,14 @@ import (
 )
 
 type Benchmark struct {
-	name                   string
-	function               func([]int) []int
-	timeRandomList         float64
-	timeRoughlySortedList  float64
-	timeNearlySortedList   float64
-	timeReversedSortedList float64
-	averageTime            float64
+	name                    string
+	function                func([]int) []int
+	timeSortedArray         float64
+	timeRandomArray         float64
+	timeRoughlySortedArray  float64
+	timeNearlySortedArray   float64
+	timeReversedSortedArray float64
+	averageTime             float64
 }
 
 func main() {
@@ -24,68 +25,73 @@ func main() {
 		{"sort.Ints", func(arr []int) []int {
 			sort.Ints(arr)
 			return arr
-		}, 0, 0, 0, 0, 0},
-		{"InsertionSort", mySort.InsertionSort, 0, 0, 0, 0, 0},
-		{"BinaryInsertionSort", mySort.BinaryInsertionSort, 0, 0, 0, 0, 0},
-		{"BubbleSort optimized", mySort.BubbleSortOptimized, 0, 0, 0, 0, 0},
-		{"SelectionSort", mySort.SelectionSortOptimized, 0, 0, 0, 0, 0},
-		{"DoubleSelectionSort", mySort.DoubleSelectionSort, 0, 0, 0, 0, 0},
-		{"ShakerSort", mySort.ShakerSort, 0, 0, 0, 0, 0},
-		{"QuickSort", mySort.QuickSort, 0, 0, 0, 0, 0},
-		{"MergeSort", mySort.MergeSort, 0, 0, 0, 0, 0},
-		{"HeapSort", mySort.HeapSort, 0, 0, 0, 0, 0},
-		{"CombSort", mySort.CombSort, 0, 0, 0, 0, 0},
-		{"ShellSort", mySort.ShellSort, 0, 0, 0, 0, 0},
-		{"Radix LSD sort base 64", mySort.RadixLSDSort, 0, 0, 0, 0, 0},
-		{"CountingSort", mySort.CountingSort, 0, 0, 0, 0, 0},
-		{"OddEvenSort", mySort.OddEvenSort, 0, 0, 0, 0, 0},
-		{"CircleSort", mySort.CircleSort, 0, 0, 0, 0, 0},
-		{"TournamentSort", mySort.TournamentSort, 0, 0, 0, 0, 0},
-		{"TreeSort", mySort.TreeSort, 0, 0, 0, 0, 0},
-		{"GnomeSort", mySort.GnomeSort, 0, 0, 0, 0, 0},
-		{"IntroSort ", mySort.IntroSort, 0, 0, 0, 0, 0},
-		{"TimSort", mySort.TimSort, 0, 0, 0, 0, 0},
-		{"SmoothSort", mySort.SmoothSort, 0, 0, 0, 0, 0},
-		{"BlockSort", mySort.BlockSort, 0, 0, 0, 0, 0},
-		{"BucketSort", mySort.BucketSort, 0, 0, 0, 0, 0},
-		{"CountingSort unstable", mySort.CountingSortUnstable, 0, 0, 0, 0, 0},
+		}, 0, 0, 0, 0, 0, 0},
+		{"InsertionSort", mySort.InsertionSort, 0, 0, 0, 0, 0, 0},
+		{"BinaryInsertionSort", mySort.BinaryInsertionSort, 0, 0, 0, 0, 0, 0},
+		{"BubbleSort optimized", mySort.BubbleSortOptimized, 0, 0, 0, 0, 0, 0},
+		{"SelectionSort", mySort.SelectionSortOptimized, 0, 0, 0, 0, 0, 0},
+		{"DoubleSelectionSort", mySort.DoubleSelectionSort, 0, 0, 0, 0, 0, 0},
+		{"ShakerSort", mySort.ShakerSort, 0, 0, 0, 0, 0, 0},
+		{"QuickSort", mySort.QuickSort, 0, 0, 0, 0, 0, 0},
+		{"MergeSort", mySort.MergeSort, 0, 0, 0, 0, 0, 0},
+		{"HeapSort", mySort.HeapSort, 0, 0, 0, 0, 0, 0},
+		{"CombSort", mySort.CombSort, 0, 0, 0, 0, 0, 0},
+		{"ShellSort", mySort.ShellSort, 0, 0, 0, 0, 0, 0},
+		{"Radix LSD sort base 64", mySort.RadixLSDSort, 0, 0, 0, 0, 0, 0},
+		{"CountingSort", mySort.CountingSortStable, 0, 0, 0, 0, 0, 0},
+		{"OddEvenSort", mySort.OddEvenSort, 0, 0, 0, 0, 0, 0},
+		{"CircleSort", mySort.CircleSort, 0, 0, 0, 0, 0, 0},
+		{"TournamentSort", mySort.TournamentSort, 0, 0, 0, 0, 0, 0},
+		{"TreeSort", mySort.TreeSort, 0, 0, 0, 0, 0, 0},
+		{"GnomeSort", mySort.GnomeSort, 0, 0, 0, 0, 0, 0},
+		{"IntroSort ", mySort.IntroSort, 0, 0, 0, 0, 0, 0},
+		{"TimSort", mySort.TimSort, 0, 0, 0, 0, 0, 0},
+		{"SmoothSort", mySort.SmoothSort, 0, 0, 0, 0, 0, 0},
+		{"BlockSort", mySort.BlockSort, 0, 0, 0, 0, 0, 0},
+		{"BucketSort", mySort.BucketSort, 0, 0, 0, 0, 0, 0},
+		{"CountingSort unstable", mySort.CountingSortUnstable, 0, 0, 0, 0, 0, 0},
 	}
 
 	n := 1_000_000
 
-	randomArray := generateRandomList(n)
-	roughlySortedArray := generateRoughlySortedList(n)
-	nearlySortedArray := generateNearlySortedList(n)
-	reversedArray := generateReversedSortedList(n)
+	sortedArray := generateSortedArray(n)
+	randomArray := generateRandomArray(n)
+	roughlySortedArray := generateRoughlySortedArray(n)
+	nearlySortedArray := generateNearlySortedArray(n)
+	reversedArray := generateReversedSortedArray(n)
 
 	computeTimeStart := time.Now()
 
 	for _, benchmark := range benchmarks {
-		benchmark.timeRandomList = measureTime(benchmark.function, append([]int(nil), randomArray...))
-		benchmark.timeRoughlySortedList = measureTime(benchmark.function, append([]int(nil), roughlySortedArray...))
-		benchmark.timeNearlySortedList = measureTime(benchmark.function, append([]int(nil), nearlySortedArray...))
-		benchmark.timeReversedSortedList = measureTime(benchmark.function, append([]int(nil), reversedArray...))
-		benchmark.averageTime = (benchmark.timeRandomList + benchmark.timeRoughlySortedList + benchmark.timeNearlySortedList + benchmark.timeReversedSortedList) / 4
+		benchmark.timeSortedArray = measureTime(benchmark.function, append([]int(nil), sortedArray...))
+		benchmark.timeRandomArray = measureTime(benchmark.function, append([]int(nil), randomArray...))
+		benchmark.timeRoughlySortedArray = measureTime(benchmark.function, append([]int(nil), roughlySortedArray...))
+		benchmark.timeNearlySortedArray = measureTime(benchmark.function, append([]int(nil), nearlySortedArray...))
+		benchmark.timeReversedSortedArray = measureTime(benchmark.function, append([]int(nil), reversedArray...))
+		benchmark.averageTime = (benchmark.timeRandomArray + benchmark.timeRoughlySortedArray + benchmark.timeNearlySortedArray + benchmark.timeReversedSortedArray) / 4
 		// Recompute the times 60 times to get a more accurate average time
 		if benchmark.averageTime < 1000 {
 			for i := 1; i < 60; i++ {
-				benchmark.timeRandomList += measureTime(benchmark.function, append([]int(nil), randomArray...))
-				benchmark.timeRoughlySortedList += measureTime(benchmark.function, append([]int(nil), roughlySortedArray...))
-				benchmark.timeNearlySortedList += measureTime(benchmark.function, append([]int(nil), nearlySortedArray...))
-				benchmark.timeReversedSortedList += measureTime(benchmark.function, append([]int(nil), reversedArray...))
+				benchmark.timeSortedArray += measureTime(benchmark.function, append([]int(nil), sortedArray...))
+				benchmark.timeRandomArray += measureTime(benchmark.function, append([]int(nil), randomArray...))
+				benchmark.timeRoughlySortedArray += measureTime(benchmark.function, append([]int(nil), roughlySortedArray...))
+				benchmark.timeNearlySortedArray += measureTime(benchmark.function, append([]int(nil), nearlySortedArray...))
+				benchmark.timeReversedSortedArray += measureTime(benchmark.function, append([]int(nil), reversedArray...))
 			}
-			benchmark.timeRandomList /= 60
-			benchmark.timeRoughlySortedList /= 60
-			benchmark.timeNearlySortedList /= 60
-			benchmark.timeReversedSortedList /= 60
-			benchmark.averageTime = (benchmark.timeRandomList + benchmark.timeRoughlySortedList + benchmark.timeNearlySortedList + benchmark.timeReversedSortedList) / 4
+			benchmark.timeSortedArray /= 60
+			benchmark.timeRandomArray /= 60
+			benchmark.timeRoughlySortedArray /= 60
+			benchmark.timeNearlySortedArray /= 60
+			benchmark.timeReversedSortedArray /= 60
+			benchmark.averageTime = (benchmark.timeSortedArray + benchmark.timeRandomArray + benchmark.timeRoughlySortedArray + benchmark.timeNearlySortedArray + benchmark.timeReversedSortedArray) / 5
 		}
 
 		fmt.Printf("\033[32m%s\033[0m\n", benchmark.name)
-		fmt.Printf("Random list: %.0f ms\n", benchmark.timeRandomList)
-		fmt.Printf("Roughly sorted list: %.0f ms\n", benchmark.timeRoughlySortedList)
-		fmt.Printf("Nearly sorted list: %.0f ms\n", benchmark.timeNearlySortedList)
-		fmt.Printf("Reversed list: %.0f ms\n", benchmark.timeReversedSortedList)
+		fmt.Printf("Sorted array: %.0f ms\n", benchmark.timeSortedArray)
+		fmt.Printf("Random array: %.0f ms\n", benchmark.timeRandomArray)
+		fmt.Printf("Roughly sorted array: %.0f ms\n", benchmark.timeRoughlySortedArray)
+		fmt.Printf("Nearly sorted array: %.0f ms\n", benchmark.timeNearlySortedArray)
+		fmt.Printf("Reversed array: %.0f ms\n", benchmark.timeReversedSortedArray)
 		fmt.Printf("Average time: %.0f ms\n", benchmark.averageTime)
 		fmt.Println()
 	}
@@ -98,7 +104,16 @@ func main() {
 	}
 }
 
-func generateRandomList(n int) []int {
+func generateSortedArray(n int) []int {
+	array := make([]int, n)
+	for i := range array {
+		array[i] = i + 1
+	}
+
+	return array
+}
+
+func generateRandomArray(n int) []int {
 	array := make([]int, n)
 	for i := range array {
 		array[i] = i + 1
@@ -112,7 +127,7 @@ func generateRandomList(n int) []int {
 	return array
 }
 
-func generateRoughlySortedList(n int) []int {
+func generateRoughlySortedArray(n int) []int {
 	array := make([]int, n)
 	for i := range array {
 		array[i] = i + 1
@@ -133,7 +148,7 @@ func generateRoughlySortedList(n int) []int {
 	return array
 }
 
-func generateNearlySortedList(n int) []int {
+func generateNearlySortedArray(n int) []int {
 	array := make([]int, n)
 	for i := range array {
 		array[i] = i + 1
@@ -150,7 +165,7 @@ func generateNearlySortedList(n int) []int {
 	return array
 }
 
-func generateReversedSortedList(n int) []int {
+func generateReversedSortedArray(n int) []int {
 	array := make([]int, n)
 	for i := range array {
 		array[i] = n - i
@@ -173,13 +188,13 @@ func exportToCsv(benchmarks []*Benchmark) error {
 	}
 	defer file.Close()
 
-	_, err = file.WriteString("Algorithm,Random list,Roughly sorted list,Nearly sorted list,Reversed list,Average time\n")
+	_, err = file.WriteString("Algorithm,Random array,Roughly sorted array,Nearly sorted array,Reversed array,Average time\n")
 	if err != nil {
 		return fmt.Errorf("failed writing to file: %s", err)
 	}
 
 	for _, benchmark := range benchmarks {
-		_, err = file.WriteString(fmt.Sprintf("%s,%.3f,%.3f,%.3f,%.3f,%.3f\n", benchmark.name, benchmark.timeRandomList, benchmark.timeRoughlySortedList, benchmark.timeNearlySortedList, benchmark.timeReversedSortedList, benchmark.averageTime))
+		_, err = file.WriteString(fmt.Sprintf("%s,%.3f, %.3f,%.3f,%.3f,%.3f,%.3f\n", benchmark.name, benchmark.timeSortedArray, benchmark.timeRandomArray, benchmark.timeRoughlySortedArray, benchmark.timeNearlySortedArray, benchmark.timeReversedSortedArray, benchmark.averageTime))
 		if err != nil {
 			return fmt.Errorf("failed writing to file: %s", err)
 		}
