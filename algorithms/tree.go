@@ -1,11 +1,18 @@
 package sort
 
 func TreeSort(array []int) []int {
+	if len(array) == 0 {
+		return array
+	}
+
 	root := &Node{Value: array[0]}
 	for _, val := range array[1:] {
 		root.Insert(val)
 	}
-	return root.Traverse()
+
+	result := make([]int, 0, len(array))
+	root.Traverse(&result)
+	return result
 }
 
 type Node struct {
@@ -30,14 +37,12 @@ func (n *Node) Insert(val int) {
 	}
 }
 
-func (n *Node) Traverse() []int {
-	var result []int
+func (n *Node) Traverse(result *[]int) {
 	if n.Left != nil {
-		result = append(result, n.Left.Traverse()...)
+		n.Left.Traverse(result)
 	}
-	result = append(result, n.Value)
+	*result = append(*result, n.Value)
 	if n.Right != nil {
-		result = append(result, n.Right.Traverse()...)
+		n.Right.Traverse(result)
 	}
-	return result
 }
