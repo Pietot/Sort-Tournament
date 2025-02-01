@@ -1,6 +1,6 @@
 package sort
 
-func CountingSort(array []int) []int {
+func CountingSortStable(array []int) []int {
 	max := getMax(array)
 	count := make([]int, max+1)
 	output := make([]int, len(array))
