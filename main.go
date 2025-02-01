@@ -50,6 +50,7 @@ func main() {
 		{"BlockSort", mySort.BlockSort, 0, 0, 0, 0, 0, 0},
 		{"BucketSort", mySort.BucketSort, 0, 0, 0, 0, 0, 0},
 		{"CountingSort unstable", mySort.CountingSortUnstable, 0, 0, 0, 0, 0, 0},
+		{"RedBlackTreeSort", mySort.RedBlackTreeSort, 0, 0, 0, 0, 0, 0},
 	}
 
 	n := 1_000_000
