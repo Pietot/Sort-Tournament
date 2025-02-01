@@ -22,7 +22,7 @@ func TestSorts(test *testing.T) {
 		{"CombSort", mySort.CombSort},
 		{"ShellSort", mySort.ShellSort},
 		{"RadixLSDSort", mySort.RadixLSDSort},
-		{"CountingSort", mySort.CountingSort},
+		{"CountingSortStable", mySort.CountingSortStable},
 		{"OddEvenSort", mySort.OddEvenSort},
 		{"CircleSort", mySort.CircleSort},
 		{"TournamentSort", mySort.TournamentSort},
