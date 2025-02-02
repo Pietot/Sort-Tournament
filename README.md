@@ -114,6 +114,9 @@ Here are the algorithms ranked from the fastest to the slowest by average time:
 |  24  | **Gnome Sort**                                        |   ~ 8 min    | ~ 12 min 30s |       ~ 10 ms        |       ~ 3 min       |    ~ 1 ms    |    ~ 25 min    |
 |  25  | **Bubble Sort (optimized)**                           |   ~ 10 min   | ~ 26 min 30s |       ~ 10 ms        |    ~ 10 minutes     |    ~ 1 ms    |  ~ 16 min 30s  |
 |  26  | **Tree Sort**                                         |   ~ 30 min   |   ~ 469 ms   |       ~ 25 min       |      ~ 491 ms       | ~ 1 h 3 min  |     ~ 1 h      |
+<p align="center">
+    <a href="benchmark.csv">Download csv here</a>
+</p>
 
 ## 6 - Improve the project
 
