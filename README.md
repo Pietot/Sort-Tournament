@@ -49,7 +49,7 @@ To use the tool, you just need to open a terminal in the project directory and r
 go run .
 ```
 
-If you want to change the number of elements in the lists, go on line 52 in main.go and change the value of the variable `n`.
+If you want to change the number of elements in the lists, go on line 57 in main.go and change the value of the variable `n`.
 
 ## 4 - Algorithms
 
