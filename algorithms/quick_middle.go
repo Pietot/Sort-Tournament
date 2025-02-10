@@ -1,6 +1,6 @@
 package sort
 
-func QuickSort(array []int) []int {
+func QuickSortMiddle(array []int) []int {
 	if len(array) < 2 {
 		return array
 	}
@@ -14,7 +14,7 @@ func QuickSort(array []int) []int {
 		}
 	}
 	array[left], array[right] = array[right], array[left]
-	QuickSort(array[:left])
-	QuickSort(array[left+1:])
+	QuickSortMiddle(array[:left])
+	QuickSortMiddle(array[left+1:])
 	return array
 }
