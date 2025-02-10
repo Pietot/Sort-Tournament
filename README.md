@@ -118,6 +118,8 @@ Here are the algorithms ranked from the fastest to the slowest by average time:
     <a href="benchmark.csv">Download csv here</a>
 </p>
 
+> **Note**: For each times, the array contained 1 million element from 1 to 1 000 000.
+
 ## 6 - Improve the project
 
 If you like this project and/or want to help or improve it, you can:
