@@ -54,7 +54,7 @@ func main() {
 		{"RedBlackTreeSort", mySort.RedBlackTreeSort, 0, 0, 0, 0, 0, 0},
 	}
 
-	n := 1_000
+	n := 1_000_000
 
 	randomArray := generateRandomArray(n)
 	roughlySortedArray := generateRoughlySortedArray(n)
