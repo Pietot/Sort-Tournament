@@ -106,15 +106,6 @@ func main() {
 	}
 }
 
-func generateSortedArray(n int) []int {
-	array := make([]int, n)
-	for i := range array {
-		array[i] = i + 1
-	}
-
-	return array
-}
-
 func generateRandomArray(n int) []int {
 	array := make([]int, n)
 	for i := range array {
@@ -162,6 +153,15 @@ func generateNearlySortedArray(n int) []int {
 		j := r.Intn(n)
 		k := r.Intn(n)
 		array[j], array[k] = array[k], array[j]
+	}
+
+	return array
+}
+
+func generateSortedArray(n int) []int {
+	array := make([]int, n)
+	for i := range array {
+		array[i] = i + 1
 	}
 
 	return array
