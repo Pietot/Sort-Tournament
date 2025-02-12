@@ -88,32 +88,34 @@ Here are the algorithms ranked from the fastest to the slowest by average time:
 
 | Rank | Algorithm                                             | Average time | Random array | Roughly sorted array | Nearly sorted array | Sorted array | Reversed array |
 | :--: | :---------------------------------------------------- | :----------: | :----------: | :------------------: | :-----------------: | :----------: | :------------: |
-|  1   | **Counting Sort (unstable)**                          |    ~ 4 ms    |    ~ 5 ms    |        ~ 4 ms        |       ~ 5 ms        |    ~ 4 ms    |     ~ 4 ms     |
-|  2   | **Counting Sort (stable)**                            |   ~ 11 ms    |   ~ 17 ms    |        ~ 8 ms        |       ~ 14 ms       |    ~ 8 ms    |     ~ 6 ms     |
+|  1   | **Quick Sort (dual pivot)**                           |    ~ 2 ms    |    ~ 5 ms    |        ~ 1 ms        |       ~ 3 ms        |    ~ 2 ms    |     ~ 1 ms     |
+|  2   | **Counting Sort (unstable)**                          |    ~ 4 ms    |    ~ 5 ms    |        ~ 4 ms        |       ~ 5 ms        |    ~ 4 ms    |     ~ 4 ms     |
 |  3   | **Bucket Sort**                                       |   ~ 28 ms    |   ~ 38 ms    |       ~ 27 ms        |       ~ 26 ms       |   ~ 18 ms    |    ~ 31 ms     |
-|  4   | **Block Sort**                                        |   ~ 29 ms    |   ~ 30 ms    |        ~ 30ms        |       ~ 29 ms       |   ~ 29 ms    |    ~ 29 ms     |
-|  5   | **Pattern-Defeating Quick Sort (default sort in Go)** |   ~ 32 ms    |   ~ 91 ms    |       ~ 30 ms        |       ~ 37 ms       |    ~ 1 ms    |     ~ 2 ms     |
-|  6   | **Intro Sort**                                        |   ~ 33 ms    |   ~ 88 ms    |       ~ 21 ms        |       ~ 30 ms       |   ~ 12 ms    |    ~ 13 ms     |
-|  7   | **Quick Sort (middle pivot)**                         |   ~ 45 ms    |   ~ 85 ms    |       ~ 36 ms        |       ~ 60 ms       |   ~ 21 ms    |    ~ 24 ms     |
-|  8   | **Radix LSD Sort (base 64)**                          |   ~ 67 ms    |   ~ 68 ms    |       ~ 67 ms        |       ~ 67 ms       |   ~ 67 ms    |    ~ 68 ms     |
-|  9   | **Comb Sort**                                         |   ~ 70 ms    |   ~ 120 ms   |       ~ 41 ms        |      ~ 111 ms       |   ~ 36 ms    |    ~ 42 ms     |
-|  10  | **Tim Sort**                                          |   ~ 71 ms    |   ~ 126 ms   |       ~ 52 ms        |       ~ 66 ms       |   ~ 45 ms    |    ~ 66 ms     |
-|  11  | **Shell Sort**                                        |   ~ 77 ms    |   ~ 162 ms   |       ~ 27 ms        |      ~ 146 ms       |   ~ 20 ms    |    ~ 29 ms     |
-|  12  | **Smooth Sort**                                       |   ~ 78 ms    |   ~ 123 ms   |       ~ 64 ms        |       ~ 77 ms       |   ~ 61 ms    |    ~ 66 ms     |
-|  13  | **Merge Sort**                                        |   ~ 107 ms   |   ~ 167 ms   |       ~ 90 ms        |      ~ 113 ms       |   ~ 82 ms    |    ~ 83 ms     |
-|  14  | **Tournament Sort**                                   |   ~ 180 ms   |   ~ 293 ms   |       ~ 147 ms       |      ~ 176 ms       |   ~ 144 ms   |    ~ 141 ms    |
-|  15  | **Heap Sort**                                         |   ~ 282 ms   |   ~ 347 ms   |       ~ 242 ms       |      ~ 269 ms       |   ~ 237 ms   |    ~ 316 ms    |
-|  16  | **Red Black Tree Sort**                               |   ~ 301 ms   |   ~ 589 ms   |       ~ 195 ms       |      ~ 321 ms       |   ~ 205 ms   |    ~ 195 ms    |
-|  17  | **Binary Insertion Sort**                             |   ~ 1 min    | ~ 1 min 30s  |       ~ 40 ms        |        ~ 17s        |   ~ 36 ms    |  ~ 3 min 30s   |
-|  18  | **Insertion Sort**                                    | ~ 1 min 30s  | ~ 2 min 30s  |        ~ 8 ms        |        ~ 36s        |    ~ 1 ms    |    ~ 2 min     |
-|  19  | **Circle Sort**                                       | ~ 2 min 30s  | ~ 2 min 30s  |     ~ 2 min 30s      |     ~ 2 min 30s     | ~ 2 min 30s  |  ~ 2 min 30s   |
-|  20  | **Double Selection Sort**                             |   ~ 7 min    |   ~ 7 min    |       ~ 7 min        |       ~ 7 min       |   ~ 7 min    |    ~ 7 min     |
-|  21  | **Odd-Even Sort**                                     |  ~ 7 min 30  |   ~ 15 min   |        ~ 9 ms        |      ~ 14 min       |    ~ 0 ms    |  ~ 7 min 30s   |
-|  22  | **Shaker Sort**                                       |   ~ 8 min    |   ~ 19 min   |       ~ 10 ms        |     ~ 2 min 30s     |    ~ 1 ms    |  ~ 16 min 30s  |
-|  23  | **Selection Sort (optimized)**                        |   ~ 8 min    |   ~ 8 min    |       ~ 8 min        |       ~ 8 min       |   ~ 8 min    |    ~ 7 min     |
-|  24  | **Gnome Sort**                                        |   ~ 8 min    | ~ 12 min 30s |       ~ 10 ms        |       ~ 3 min       |    ~ 1 ms    |    ~ 25 min    |
-|  25  | **Bubble Sort (optimized)**                           |   ~ 10 min   | ~ 26 min 30s |       ~ 10 ms        |    ~ 10 minutes     |    ~ 1 ms    |  ~ 16 min 30s  |
-|  26  | **Tree Sort**                                         |   ~ 30 min   |   ~ 469 ms   |       ~ 25 min       |      ~ 491 ms       | ~ 1 h 3 min  |     ~ 1 h      |
+|  4   | **Counting Sort (stable)**                            |   ~ 11 ms    |   ~ 17 ms    |        ~ 8 ms        |       ~ 14 ms       |    ~ 8 ms    |     ~ 6 ms     |
+|  5   | **Block Sort**                                        |   ~ 29 ms    |   ~ 30 ms    |        ~ 30ms        |       ~ 29 ms       |   ~ 29 ms    |    ~ 29 ms     |
+|  6   | **Pattern-Defeating Quick Sort (default sort in Go)** |   ~ 32 ms    |   ~ 91 ms    |       ~ 30 ms        |       ~ 37 ms       |    ~ 1 ms    |     ~ 2 ms     |
+|  7   | **Intro Sort**                                        |   ~ 33 ms    |   ~ 88 ms    |       ~ 21 ms        |       ~ 30 ms       |   ~ 12 ms    |    ~ 13 ms     |
+|  8   | **Quick Sort (middle pivot)**                         |   ~ 45 ms    |   ~ 85 ms    |       ~ 36 ms        |       ~ 60 ms       |   ~ 21 ms    |    ~ 24 ms     |
+|  9   | **Radix LSD Sort (base 64)**                          |   ~ 67 ms    |   ~ 68 ms    |       ~ 67 ms        |       ~ 67 ms       |   ~ 67 ms    |    ~ 68 ms     |
+|  10  | **Comb Sort**                                         |   ~ 70 ms    |   ~ 120 ms   |       ~ 41 ms        |      ~ 111 ms       |   ~ 36 ms    |    ~ 42 ms     |
+|  11  | **Tim Sort**                                          |   ~ 71 ms    |   ~ 126 ms   |       ~ 52 ms        |       ~ 66 ms       |   ~ 45 ms    |    ~ 66 ms     |
+|  12  | **Shell Sort**                                        |   ~ 77 ms    |   ~ 162 ms   |       ~ 27 ms        |      ~ 146 ms       |   ~ 20 ms    |    ~ 29 ms     |
+|  13  | **Smooth Sort**                                       |   ~ 78 ms    |   ~ 123 ms   |       ~ 64 ms        |       ~ 77 ms       |   ~ 61 ms    |    ~ 66 ms     |
+|  14  | **Merge Sort**                                        |   ~ 107 ms   |   ~ 167 ms   |       ~ 90 ms        |      ~ 113 ms       |   ~ 82 ms    |    ~ 83 ms     |
+|  15  | **Tournament Sort**                                   |   ~ 180 ms   |   ~ 293 ms   |       ~ 147 ms       |      ~ 176 ms       |   ~ 144 ms   |    ~ 141 ms    |
+|  16  | **Heap Sort**                                         |   ~ 282 ms   |   ~ 347 ms   |       ~ 242 ms       |      ~ 269 ms       |   ~ 237 ms   |    ~ 316 ms    |
+|  17  | **Red Black Tree Sort**                               |   ~ 301 ms   |   ~ 589 ms   |       ~ 195 ms       |      ~ 321 ms       |   ~ 205 ms   |    ~ 195 ms    |
+|  18  | **Binary Insertion Sort**                             |   ~ 1 min    | ~ 1 min 30s  |       ~ 40 ms        |        ~ 17s        |   ~ 36 ms    |  ~ 3 min 30s   |
+|  19  | **Insertion Sort**                                    | ~ 1 min 30s  | ~ 2 min 30s  |        ~ 8 ms        |        ~ 36s        |    ~ 1 ms    |    ~ 2 min     |
+|  20  | **Circle Sort**                                       | ~ 2 min 30s  | ~ 2 min 30s  |     ~ 2 min 30s      |     ~ 2 min 30s     | ~ 2 min 30s  |  ~ 2 min 30s   |
+|  21  | **Double Selection Sort**                             |   ~ 7 min    |   ~ 7 min    |       ~ 7 min        |       ~ 7 min       |   ~ 7 min    |    ~ 7 min     |
+|  22  | **Odd-Even Sort**                                     |  ~ 7 min 30  |   ~ 15 min   |        ~ 9 ms        |      ~ 14 min       |    ~ 0 ms    |  ~ 7 min 30s   |
+|  23  | **Shaker Sort**                                       |   ~ 8 min    |   ~ 19 min   |       ~ 10 ms        |     ~ 2 min 30s     |    ~ 1 ms    |  ~ 16 min 30s  |
+|  24  | **Selection Sort (optimized)**                        |   ~ 8 min    |   ~ 8 min    |       ~ 8 min        |       ~ 8 min       |   ~ 8 min    |    ~ 7 min     |
+|  25  | **Gnome Sort**                                        |   ~ 8 min    | ~ 12 min 30s |       ~ 10 ms        |       ~ 3 min       |    ~ 1 ms    |    ~ 25 min    |
+|  26  | **Bubble Sort (optimized)**                           |   ~ 10 min   | ~ 26 min 30s |       ~ 10 ms        |    ~ 10 minutes     |    ~ 1 ms    |  ~ 16 min 30s  |
+|  27  | **Tree Sort**                                         |   ~ 30 min   |   ~ 469 ms   |       ~ 25 min       |      ~ 491 ms       | ~ 1 h 3 min  |     ~ 1 h      |
+
 <p align="center">
     <a href="benchmark.csv">Download csv here</a>
 </p>
