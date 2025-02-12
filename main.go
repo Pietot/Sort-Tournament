@@ -33,7 +33,7 @@ func main() {
 		{"SelectionSort optimized", mySort.SelectionSortOptimized, 0, 0, 0, 0, 0, 0},
 		{"DoubleSelectionSort", mySort.DoubleSelectionSort, 0, 0, 0, 0, 0, 0},
 		{"ShakerSort", mySort.ShakerSort, 0, 0, 0, 0, 0, 0},
-		{"QuickSort middle pivot", mySort.QuickSort, 0, 0, 0, 0, 0, 0},
+		{"QuickSort middle pivot", mySort.QuickSortMiddlePivot, 0, 0, 0, 0, 0, 0},
 		{"MergeSort", mySort.MergeSort, 0, 0, 0, 0, 0, 0},
 		{"HeapSort", mySort.HeapSort, 0, 0, 0, 0, 0, 0},
 		{"CombSort", mySort.CombSort, 0, 0, 0, 0, 0, 0},
@@ -52,6 +52,7 @@ func main() {
 		{"BucketSort", mySort.BucketSort, 0, 0, 0, 0, 0, 0},
 		{"CountingSort unstable", mySort.CountingSortUnstable, 0, 0, 0, 0, 0, 0},
 		{"RedBlackTreeSort", mySort.RedBlackTreeSort, 0, 0, 0, 0, 0, 0},
+		{"QuickSort dual pivot", mySort.QuickSortDualPivot, 0, 0, 0, 0, 0, 0},
 	}
 
 	n := 1_000_000
