@@ -16,7 +16,7 @@ func TestSorts(test *testing.T) {
 		{"SelectionSortOptimized", mySort.SelectionSortOptimized},
 		{"DoubleSelectionSort", mySort.DoubleSelectionSort},
 		{"ShakerSort", mySort.ShakerSort},
-		{"QuickSort", mySort.QuickSort},
+		{"QuickSortMiddlePivot", mySort.QuickSortMiddlePivot},
 		{"MergeSort", mySort.MergeSort},
 		{"HeapSort", mySort.HeapSort},
 		{"CombSort", mySort.CombSort},
@@ -35,6 +35,7 @@ func TestSorts(test *testing.T) {
 		{"BucketSort", mySort.BucketSort},
 		{"CountingSortUnstable", mySort.CountingSortUnstable},
 		{"RedBlackTreeSort", mySort.RedBlackTreeSort},
+		{"QuickSortDualPivot", mySort.QuickSortDualPivot},
 	}
 
 	unsortedArray := [8]int{5, 3, 8, 6, 2, 7, 1, 4}
