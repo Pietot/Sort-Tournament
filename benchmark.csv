@@ -1,27 +1,28 @@
-Algorithm, Average time, Sorted array,Random array,Roughly sorted array,Nearly sorted array,Reversed array
-sort.Ints,32,1,91,30,37,2
-InsertionSort,100945,1,157878,8,35826,311014
-BinaryInsertionSort,64827,36,101816,40,17460,204783
-BubbleSort optimized,636468,1,1588543,10,598266,995520
-SelectionSort,478585,495168,493046,495838,493217,415657
-DoubleSelectionSort,418315,418177,417921,418736,418391,418351
-ShakerSort,463348,1,1158472,10,161688,996569
-QuickSort,45,21,85,36,60,24
-MergeSort,107,82,167,90,113,83
-HeapSort,282,237,347,242,269,316
-CombSort,70,36,120,41,111,42
-ShellSort,77,20,162,27,146,29
-Radix LSD sort base 64,67,67,68,67,67,68
-CountingSort stable,11,8,17,8,14,6
-OddEvenSort,444308,0,923454,9,842485,455594
-CircleSort,163469,163705,163096,163761,163138,163647
-TournamentSort,180,144,293,147,176,141
-TreeSort,1834675,3839162,469,1493027,491,3840224
-GnomeSort,485813,1,745724,10,173496,1509833
-IntroSort ,33,12,88,21,30,13
-TimSort,71,45,126,52,66,66
-SmoothSort,78,61,123,64,77,66
-BlockSort,29,29,30,30,29,29
-BucketSort,28,18,38,27,26,31
-CountingSort unstable,4,4,5,4,5,4
-RedBlackTreeSort,301,205,589,195,321,195
+Algorithm, Average time,Random array,Roughly sorted array,Nearly sorted array, Sorted array,Reversed array
+sort.Ints,32,91,30,37,1,2
+InsertionSort,100945,157878,8,35826,1,311014
+BinaryInsertionSort,64827,101816,40,17460,36,204783
+BubbleSort optimized,636468,1588543,10,598266,1,995520
+SelectionSort,478585,493046,495838,493217,495168,415657
+DoubleSelectionSort,418315,417921,418736,418391,418177,418351
+ShakerSort,463348,1158472,10,161688,1,996569
+QuickSort middle pivot,45,85,36,60,21,24
+MergeSort,107,167,90,113,82,83
+HeapSort,282,347,242,269,237,316
+CombSort,70,120,41,111,36,42
+ShellSort,77,162,27,146,20,29
+Radix LSD sort base 64,67,68,67,67,67,68
+CountingSort stable,11,17,8,14,8,6
+OddEvenSort,444308,923454,9,842485,0,455594
+CircleSort,163469,163096,163761,163138,163705,163647
+TournamentSort,180,293,147,176,144,141
+TreeSort,1834675,469,1493027,491,3839162,3840224
+GnomeSort,485813,745724,10,173496,1,1509833
+IntroSort ,33,88,21,30,12,13
+TimSort,71,126,52,66,45,66
+SmoothSort,78,123,64,77,61,66
+BlockSort,29,30,30,29,29,29
+BucketSort,28,38,27,26,18,31
+CountingSort unstable,4,5,4,5,4,4
+RedBlackTreeSort,301,589,195,321,205,195
+QuickSort dual pivot,2,5,1,3,1,1
