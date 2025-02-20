@@ -90,8 +90,8 @@ Here are the algorithms ranked from the fastest to the slowest by average time:
 | :--: | :---------------------------------------------------- | :----------: | :----------: | :------------------: | :-----------------: | :----------: | :------------: |
 |  1   | **Quick Sort (dual pivot)**                           |    ~ 2 ms    |    ~ 5 ms    |        ~ 1 ms        |       ~ 3 ms        |    ~ 2 ms    |     ~ 1 ms     |
 |  2   | **Counting Sort (unstable)**                          |    ~ 4 ms    |    ~ 5 ms    |        ~ 4 ms        |       ~ 5 ms        |    ~ 4 ms    |     ~ 4 ms     |
-|  3   | **Bucket Sort**                                       |   ~ 28 ms    |   ~ 38 ms    |       ~ 27 ms        |       ~ 26 ms       |   ~ 18 ms    |    ~ 31 ms     |
-|  4   | **Counting Sort (stable)**                            |   ~ 11 ms    |   ~ 17 ms    |        ~ 8 ms        |       ~ 14 ms       |    ~ 8 ms    |     ~ 6 ms     |
+|  3   | **Counting Sort (stable)**                            |   ~ 11 ms    |   ~ 17 ms    |        ~ 8 ms        |       ~ 14 ms       |    ~ 8 ms    |     ~ 6 ms     |
+|  4   | **Bucket Sort**                                       |   ~ 28 ms    |   ~ 38 ms    |       ~ 27 ms        |       ~ 26 ms       |   ~ 18 ms    |    ~ 31 ms     |
 |  5   | **Block Sort**                                        |   ~ 29 ms    |   ~ 30 ms    |        ~ 30ms        |       ~ 29 ms       |   ~ 29 ms    |    ~ 29 ms     |
 |  6   | **Pattern-Defeating Quick Sort (default sort in Go)** |   ~ 32 ms    |   ~ 91 ms    |       ~ 30 ms        |       ~ 37 ms       |    ~ 1 ms    |     ~ 2 ms     |
 |  7   | **Intro Sort**                                        |   ~ 33 ms    |   ~ 88 ms    |       ~ 21 ms        |       ~ 30 ms       |   ~ 12 ms    |    ~ 13 ms     |
