@@ -121,6 +121,8 @@ Here are the algorithms ranked from the fastest to the slowest by average time:
 </p>
 
 > **Note**: For each times, the array contained 1 million element from 1 to 1 000 000 and each algorithm had to sort the same 5 arrays.
+> 
+> Tests have been made on a 64-bit Windows 10 computer with a Ryzen 5 3600 and 16GB of RAM clocked at 3600MHz in go1.22.5 windows/amd64.
 
 ## 6 - Improve the project
 
